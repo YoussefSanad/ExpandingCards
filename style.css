@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Muli, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.green {
+  background-color: rgb(57, 201, 0);
+  background: linear-gradient(90deg, rgb(57, 201, 0), rgb(72, 255, 0));
+}
+
+.yellow {
+  background-color: rgb(236, 236, 0);
+  background: linear-gradient(90deg, rgb(236, 236, 0), rgb(253, 255, 146));
+}
+
+.blue {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(9, 9, 121, 1), rgba(0, 212, 255, 1));
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  height: 80vh;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in-out;
+}
+
+.panel-text {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.expanded {
+  flex: 5;
+}
+
+.panel.expanded .panel-text {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.2s;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(3) {
+    display: none;
+  }
+}
